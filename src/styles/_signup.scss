@@ -1,4 +1,4 @@
-.login-container {
+.signup-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,7 +11,7 @@
   form {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 1rem;
-    height: 20rem;
+    height: 24rem;
     width: 25rem;
     padding: 2rem;
     display: flex;
@@ -21,6 +21,14 @@
     .input-container {
       margin-bottom: 1rem;
       text-align: center;
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        #input-name {
+          margin-right: 0.5rem;
+        }
+      }
       input {
         margin-bottom: 0.7rem;
         padding: 0.5rem;

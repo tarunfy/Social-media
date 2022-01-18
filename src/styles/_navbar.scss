@@ -8,10 +8,11 @@
   left: 0;
   width: 100%;
   background-color: white;
-  font-family: sans-serif;
+  border-bottom: 0.1px solid rgba(0, 0, 0, 0.2);
   .logo {
     font-weight: bolder;
     font-size: 1.8rem;
+    font-family: sans-serif;
   }
   .link {
     text-decoration: none;
@@ -19,18 +20,15 @@
     font-weight: 600;
     margin-left: 1rem;
     padding: 0.5rem 0.8rem;
-    font-family: "Roboto", sans-serif;
-    letter-spacing: 2.5px;
-    color: #000;
+    font-family: "Poppins";
+    color: black;
     border: none;
     border-radius: 0.3rem;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease 0s;
+    transition: all 0.2s ease-in-out 0s;
     &:hover {
-      background-color: $primary;
       box-shadow: 0px 15px 20px $btn;
-      color: #fff;
-      transform: translateY(-7px);
+      color: white;
+      background-color: $primary;
     }
   }
 }
