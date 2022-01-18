@@ -264,6 +264,115 @@
   cursor: pointer;
 }
 
+.profile-container {
+  height: 100vh;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 5rem;
+  padding: 3rem;
+}
+
+.profile-container h1 {
+  font-family: "Poppins";
+  font-weight: 800;
+  font-size: 4rem;
+  word-spacing: 1rem;
+}
+
+.profile-container form {
+  width: 60%;
+  font-family: "Poppins";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 22rem;
+}
+
+.profile-container form .input-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.profile-container form .input-container .field-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+.profile-container form .input-container .field-container input {
+  font-family: "Poppins";
+  font-size: 1.2rem;
+  padding: 0.6rem;
+  border: 0.1px solid rgba(0, 0, 0, 0.241);
+  outline: none;
+  border-radius: 0.5rem;
+}
+
+.profile-container form .input-container .field-container #profile-img {
+  cursor: pointer;
+  width: 34%;
+}
+
+.profile-container form button {
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  border-radius: 0.6rem;
+  border: none;
+  outline: none;
+  background-color: rgba(46, 229, 157, 0.7);
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+}
+
+.profile-container form button:hover {
+  -webkit-box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.7);
+          box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.7);
+  color: white;
+  background-color: #2ee59d;
+}
+
 .navbar-container {
   display: -webkit-box;
   display: -ms-flexbox;

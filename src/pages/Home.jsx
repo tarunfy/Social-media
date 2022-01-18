@@ -5,6 +5,11 @@ const Home = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(title, description);
+  };
+
   return (
     <div className="home-container">
       <div className="left">
@@ -13,11 +18,18 @@ const Home = () => {
         <Card />
       </div>
       <div className="right">
-        <form>
+        <form onSubmit={handleSubmit}>
           <h2>Add Post</h2>
           <div className="input-container">
-            <input type="text" placeholder="Title" />
+            <input
+              type="text"
+              placeholder="Title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
             <textarea
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
               name="description"
               id="description"
               placeholder="Description"
