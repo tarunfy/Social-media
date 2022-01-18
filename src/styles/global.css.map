@@ -1,0 +1,14 @@
+{
+    "version": 3,
+    "mappings": "AAMA,AAAA,CAAC,CAAC;EACA,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,UAAU;CACvB",
+    "sources": [
+        "global.scss",
+        "_variables.scss",
+        "_login.scss",
+        "_signin.scss",
+        "_profile.scss",
+        "_navbar.scss"
+    ],
+    "names": [],
+    "file": "global.css"
+}
