@@ -23,6 +23,63 @@
           align-items: start;
 }
 
+.home-container .right form {
+  font-family: "Poppins";
+  padding: 1rem;
+  background-color: rgba(46, 229, 157, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  border-radius: 2rem;
+}
+
+.home-container .right form .input-container input {
+  width: 90%;
+  padding: 0.5rem;
+  margin: 0.5rem 0rem;
+  outline: none;
+  border: 0.1px solid rgba(0, 0, 0, 0.329);
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  font-family: "Poppins";
+}
+
+.home-container .right form .input-container textarea {
+  padding: 0.5rem;
+  margin: 0.5rem 0rem;
+  outline: none;
+  border: 0.1px solid rgba(0, 0, 0, 0.329);
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  font-family: "Poppins";
+}
+
+.home-container .right form button {
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  border: none;
+  font-family: "Poppins";
+  cursor: pointer;
+  background-color: rgba(46, 229, 157, 0.7);
+  -webkit-transition: color 1s ease-in-out;
+  transition: color 1s ease-in-out;
+}
+
+.home-container .right form button:hover {
+  background-color: #2ee59d;
+}
+
 .login-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -77,6 +134,7 @@
   width: 100%;
   border: 0.1px solid rgba(0, 0, 0, 0.329);
   border-radius: 0.5rem;
+  font-family: "Poppins";
 }
 
 .login-container form button {
@@ -165,6 +223,7 @@
   width: 100%;
   border: 0.1px solid rgba(0, 0, 0, 0.329);
   border-radius: 0.5rem;
+  font-family: "Poppins";
 }
 
 .signup-container form button {

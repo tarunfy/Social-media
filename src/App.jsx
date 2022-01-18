@@ -8,7 +8,7 @@ import Profile from "./pages/Profie";
 import "./styles/global.css";
 
 const App = () => {
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(false);
   return (
     <>
       <Navbar />
