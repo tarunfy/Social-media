@@ -1,7 +1,13 @@
-import React from "react";
-import { BiLike } from "react-icons/bi";
+import React, { useState } from "react";
+import { AiFillLike, AiOutlineLike } from "react-icons/ai";
 
 const Card = () => {
+  const [isLiked, setIsLiked] = useState(false);
+
+  const handleLike = () => {
+    setIsLiked((prev) => !prev);
+  };
+
   return (
     <div className="card-container">
       <div className="top">
@@ -16,7 +22,15 @@ const Card = () => {
       <div className="bottom">
         <h5>10 mins ago</h5>
         {""}
-        <BiLike id="like-icon" />
+        {isLiked ? (
+          <>
+            <AiFillLike id="like-icon" onClick={handleLike} />
+          </>
+        ) : (
+          <>
+            <AiOutlineLike id="like-icon" onClick={handleLike} />
+          </>
+        )}
       </div>
     </div>
   );

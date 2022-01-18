@@ -16,6 +16,7 @@ const Home = () => {
         <Card />
         <Card />
         <Card />
+        <Card />
       </div>
       <div className="right">
         <form onSubmit={handleSubmit}>
