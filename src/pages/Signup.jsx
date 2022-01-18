@@ -9,7 +9,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email, password);
+    console.log(email, password, fullName, contactNumber, confirmPassword);
   };
 
   return (

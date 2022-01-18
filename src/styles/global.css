@@ -180,29 +180,54 @@
 
 .navbar-container .logo {
   font-weight: bolder;
+  letter-spacing: 0.2rem;
   font-size: 1.8rem;
+  text-decoration: none;
+  color: black;
   font-family: sans-serif;
 }
 
-.navbar-container .link {
+.navbar-container .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.navbar-container .links .link,
+.navbar-container .links button {
   text-decoration: none;
   font-size: 1rem;
   font-weight: 600;
+  cursor: pointer;
+  background-color: white;
   margin-left: 1rem;
   padding: 0.5rem 0.8rem;
   font-family: "Poppins";
   color: black;
   border: none;
-  border-radius: 0.3rem;
+  border-radius: 0.5rem;
   -webkit-transition: all 0.2s ease-in-out 0s;
   transition: all 0.2s ease-in-out 0s;
 }
 
-.navbar-container .link:hover {
+.navbar-container .links .link:hover,
+.navbar-container .links button:hover {
   -webkit-box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.7);
           box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.7);
   color: white;
   background-color: #2ee59d;
+}
+
+.navbar-container .links img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
 }
 
 * {

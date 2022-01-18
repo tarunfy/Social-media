@@ -4,10 +4,11 @@ import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
+import Profile from "./pages/Profie";
 import "./styles/global.css";
 
 const App = () => {
-  const [user, setUser] = useState(false);
+  const [user, setUser] = useState(true);
   return (
     <>
       <Navbar />
@@ -17,6 +18,13 @@ const App = () => {
           path="/"
           render={(props) =>
             user ? <Home {...props} /> : <Redirect to="/login" />
+          }
+        />
+        <Route
+          exact
+          path="/profile"
+          render={(props) =>
+            user ? <Profile {...props} /> : <Redirect to="/login" />
           }
         />
         <Route
