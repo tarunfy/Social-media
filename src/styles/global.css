@@ -1,4 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+.home-container {
+  width: 100%;
+  margin-top: 5rem;
+  padding: 3rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+}
+
+.home-container .left {
+  grid-column: span 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
 .login-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -157,6 +181,28 @@
 
 .signup-container form button:hover {
   background-color: #2ee59d;
+}
+
+.card-container {
+  font-family: "Poppins";
+  background-color: white;
+  width: 40%;
+  margin: 0rem 1rem;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  -webkit-box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+          box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.card-container .top {
+  margin-bottom: 1rem;
+}
+
+.card-container .bottom #like-icon {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
 }
 
 .navbar-container {
