@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(false);
 
   return (
     <div className="navbar-container">
@@ -20,7 +20,9 @@ const Navbar = () => {
             <Link to="/login" className="link">
               Login
             </Link>
-            <Link to="/signup">Sign up</Link>
+            <Link to="/signup" className="link">
+              Sign up
+            </Link>
           </>
         )}
       </div>
