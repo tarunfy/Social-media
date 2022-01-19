@@ -8,7 +8,6 @@ const Home = () => {
   const { posts } = useContext(PostContext);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -16,7 +15,7 @@ const Home = () => {
         title,
         description,
         createdAt: new Date().toString(),
-        likes: [],
+        likes: 0,
       });
       setTitle("");
       setDescription("");
@@ -36,7 +35,7 @@ const Home = () => {
               createdAt={post.createdAt}
               likes={post.likes}
               key={index}
-              docId={post.docId}
+              docId={post.id}
             />
           ))}
       </div>

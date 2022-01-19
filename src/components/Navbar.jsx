@@ -6,7 +6,7 @@ import { signOut } from "firebase/auth";
 
 const Navbar = () => {
   const { user } = useContext(AuthContext);
-
+  console.log(user);
   const handleLogout = async () => {
     try {
       await signOut(auth);
@@ -25,7 +25,11 @@ const Navbar = () => {
           <>
             <Link to="/profile">
               <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC1jQVf2JYOvvadw85Y-KeSmjJdUX-rl7bWaIDibs2s26v1QGCa5xeXpr48VhEfnG6ero&usqp=CAU"
+                src={
+                  user.profilePhoto
+                    ? user.profilePhoto
+                    : `https://saiuniversity.edu.in/wp-content/uploads/2021/02/default-img.jpg`
+                }
                 alt="profile photo"
                 id="profile"
               />
