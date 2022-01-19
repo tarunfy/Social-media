@@ -1,10 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Loader } from "@googlemaps/js-api-loader";
 
 const Profie = () => {
   const [email, setEmail] = useState("");
   const [fullName, setFullName] = useState("");
   const [contactNumber, setContactNumber] = useState("");
   const [profileImg, setProfileImg] = useState("");
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition((res) => {
+      let lat = res.coords.latitude;
+      let lng = res.coords.longitude;
+      const loader = new Loader({
+        apiKey: "AIzaSyDsZCxaEUDz9QyfTZPPsXXfLdl25P9wzmk",
+        version: "weekly",
+      });
+      loader.load().then((google) => {
+        let map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat, lng },
+          zoom: 10,
+        });
+        new google.maps.Marker({
+          position: { lat, lng },
+          map,
+        });
+      });
+    });
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -63,6 +85,7 @@ const Profie = () => {
           </div>
           <button className="btn">Update</button>
         </form>
+        <div id="map"></div>
       </div>
     </div>
   );

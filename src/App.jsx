@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
+import { AuthContext } from "./contexts/auth";
 import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -8,7 +9,8 @@ import Profile from "./pages/Profie";
 import "./styles/global.css";
 
 const App = () => {
-  const [user, setUser] = useState(true);
+  const { user } = useContext(AuthContext);
+
   return (
     <>
       <Navbar />

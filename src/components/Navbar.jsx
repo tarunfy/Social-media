@@ -1,8 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../contexts/auth";
+import { auth } from "../services/firebase";
+import { signOut } from "firebase/auth";
 
 const Navbar = () => {
-  const [user, setUser] = useState(true);
+  const { user } = useContext(AuthContext);
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
 
   return (
     <div className="navbar-container">
@@ -19,7 +30,7 @@ const Navbar = () => {
                 id="profile"
               />
             </Link>
-            <button>Logout</button>
+            <button onClick={handleLogout}>Logout</button>
           </>
         ) : (
           <>

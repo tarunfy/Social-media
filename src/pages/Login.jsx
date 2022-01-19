@@ -1,12 +1,23 @@
 import React, { useEffect, useState } from "react";
+import { auth } from "../services/firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(email, password);
+    setError("");
+    try {
+      const cred = await signInWithEmailAndPassword(auth, email, password);
+      console.log(cred.user);
+      setEmail("");
+      setPassword("");
+    } catch (err) {
+      setError(err.message);
+    }
   };
 
   return (
@@ -17,16 +28,20 @@ const Login = () => {
           <input
             type="email"
             placeholder="Email"
+            required
+            autoComplete="off"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
           />
           <input
             type="password"
+            required
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
           />
         </div>
+        {error && <div id="error">{error}</div>}
         <button type="submit" className="login-btn btn">
           Sign in
         </button>

@@ -22,7 +22,7 @@
       margin-bottom: 1rem;
       text-align: center;
       input {
-        margin-bottom: 0.7rem;
+        margin-bottom: 0.5rem;
         padding: 0.5rem;
         font-size: 1rem;
         outline: none;
@@ -31,6 +31,12 @@
         border-radius: 0.5rem;
         font-family: "Poppins";
       }
+    }
+    #error {
+      text-align: center;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: red;
     }
     button {
       padding: 0.5rem 1rem;

@@ -1,22 +1,44 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { PostContext } from "../contexts/post";
 import Card from "../components/Card";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { db } from "../services/firebase";
 
 const Home = () => {
+  const { posts } = useContext(PostContext);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(title, description);
+    try {
+      const res = await addDoc(collection(db, "posts"), {
+        title,
+        description,
+        createdAt: new Date().toString(),
+        likes: [],
+      });
+      setTitle("");
+      setDescription("");
+    } catch (err) {
+      console.log(err.message);
+    }
   };
 
   return (
     <div className="home-container">
       <div className="left">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {posts &&
+          posts.map((post, index) => (
+            <Card
+              title={post.title}
+              description={post.description}
+              createdAt={post.createdAt}
+              likes={post.likes}
+              key={index}
+              docId={post.docId}
+            />
+          ))}
       </div>
       <div className="right">
         <form onSubmit={handleSubmit}>
@@ -25,11 +47,14 @@ const Home = () => {
             <input
               type="text"
               placeholder="Title"
+              required
+              autoComplete="off"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
             <textarea
               value={description}
+              required
               onChange={(e) => setDescription(e.target.value)}
               name="description"
               id="description"

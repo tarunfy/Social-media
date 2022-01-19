@@ -1,7 +1,14 @@
 .card-container {
   font-family: "Poppins";
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  overflow: hidden;
+  word-wrap: break-word;
   width: 40%;
+  height: 15rem;
   margin: 0rem 1rem;
   padding: 1rem;
   margin-bottom: 2rem;
@@ -12,10 +19,16 @@
     margin-bottom: 1rem;
   }
   .bottom {
-    #like-icon {
-      height: 20px;
-      width: 20px;
-      cursor: pointer;
+    #like-container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      #like-icon {
+        height: 20px;
+        width: 20px;
+        cursor: pointer;
+        margin-left: 0.2rem;
+      }
     }
   }
 }

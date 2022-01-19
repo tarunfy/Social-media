@@ -30,7 +30,7 @@
         }
       }
       input {
-        margin-bottom: 0.7rem;
+        margin-bottom: 0.5rem;
         padding: 0.5rem;
         font-size: 1rem;
         outline: none;
@@ -39,6 +39,12 @@
         border-radius: 0.5rem;
         font-family: "Poppins";
       }
+    }
+    #error {
+      text-align: center;
+      font-weight: 500;
+      color: red;
+      margin-bottom: 0.5rem;
     }
     button {
       padding: 0.5rem 1rem;
