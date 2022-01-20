@@ -26,6 +26,7 @@ const Login = () => {
           contactNumber,
           fullName,
           email,
+          profilePhoto: "",
         });
         setEmail("");
         setPassword("");

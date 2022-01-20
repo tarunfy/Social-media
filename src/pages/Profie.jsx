@@ -24,6 +24,7 @@ const Profie = () => {
     navigator.geolocation.getCurrentPosition((res) => {
       let lat = res.coords.latitude;
       let lng = res.coords.longitude;
+      console.log(lat, lng);
       const loader = new Loader({
         apiKey: "AIzaSyDsZCxaEUDz9QyfTZPPsXXfLdl25P9wzmk",
         version: "weekly",
@@ -31,7 +32,7 @@ const Profie = () => {
       loader.load().then((google) => {
         let map = new google.maps.Map(document.getElementById("map"), {
           center: { lat, lng },
-          zoom: 10,
+          zoom: 14,
         });
         new google.maps.Marker({
           position: { lat, lng },
