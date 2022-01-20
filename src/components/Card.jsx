@@ -12,9 +12,8 @@ const Card = ({ title, description, likes, createdAt, docId }) => {
       setToggledLiked((toggleLiked) => !toggleLiked);
       const docRef = doc(db, "posts", docId);
       const updatedDoc = await updateDoc(docRef, {
-        likes: toggleLiked ? likes + 1 : likes - 1,
+        likes: toggleLiked ? likes - 1 : likes + 1,
       });
-      console.log(updatedDoc);
     } catch (err) {
       console.log(err.message);
     }
@@ -30,7 +29,7 @@ const Card = ({ title, description, likes, createdAt, docId }) => {
         <h5>{moment(createdAt).format("MMMM Do YYYY, h:mm:ss a")}</h5>
         <div id="like-container">
           <p>{likes}</p>
-          {likes > 0 && toggleLiked ? (
+          {toggleLiked ? (
             <>
               <AiFillLike id="like-icon" onClick={handleToggledLiked} />
             </>
