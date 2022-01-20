@@ -19,12 +19,12 @@ const Profie = () => {
   const [contactNumber, setContactNumber] = useState("");
   const [profileImg, setProfileImg] = useState("");
   const [docId, setDocId] = useState("");
+  const [userData, setUserData] = useState(null);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((res) => {
       let lat = res.coords.latitude;
       let lng = res.coords.longitude;
-      console.log(lat, lng);
       const loader = new Loader({
         apiKey: "AIzaSyDsZCxaEUDz9QyfTZPPsXXfLdl25P9wzmk",
         version: "weekly",
@@ -47,6 +47,7 @@ const Profie = () => {
       const collectionRef = collection(db, "users");
       const q = query(collectionRef, where("userId", "==", user.userId));
       const res = await getDocs(q);
+      setUserData(res.docs[0].data());
       setDocId(res.docs[0].id);
     } catch (err) {
       console.log(err.message);
@@ -93,6 +94,7 @@ const Profie = () => {
                 autoComplete="off"
                 type="email"
                 value={email}
+                placeholder={userData && userData.email}
                 onChange={(e) => setEmail(e.target.value)}
                 id="email"
                 required
@@ -103,6 +105,7 @@ const Profie = () => {
               <input
                 type="text"
                 autoComplete="off"
+                placeholder={userData && userData.fullName}
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
                 id="name"
@@ -114,6 +117,7 @@ const Profie = () => {
               <input
                 type="tel"
                 autoComplete="off"
+                placeholder={userData && userData.contactNumber}
                 value={contactNumber}
                 onChange={(e) => setContactNumber(e.target.value)}
                 id="contact"
