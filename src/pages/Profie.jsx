@@ -52,7 +52,7 @@ const Profie = () => {
     } catch (err) {
       console.log(err.message);
     }
-  }, []);
+  }, [profileImg]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
