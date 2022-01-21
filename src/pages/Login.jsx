@@ -7,12 +7,12 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  //login user
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     try {
       const cred = await signInWithEmailAndPassword(auth, email, password);
-      console.log(cred.user);
       setEmail("");
       setPassword("");
     } catch (err) {

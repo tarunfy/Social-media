@@ -12,6 +12,7 @@ const Home = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
+  //create a new post:
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -28,6 +29,7 @@ const Home = () => {
     }
   };
 
+  //getting the user profile photo:
   useEffect(async () => {
     const colRef = collection(db, "users");
     const res = await getDocs(colRef);

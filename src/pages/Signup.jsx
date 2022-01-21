@@ -11,6 +11,7 @@ const Login = () => {
   const [contactNumber, setContactNumber] = useState("");
   const [error, setError] = useState("");
 
+  //signing up and saving user's info in firestore db:
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { AiFillLike, AiOutlineLike } from "react-icons/ai";
-import moment from "moment";
 import { db } from "../services/firebase";
 import { doc, updateDoc } from "firebase/firestore";
+import moment from "moment";
 
 const Card = ({ title, description, likes, createdAt, docId }) => {
   const [toggleLiked, setToggledLiked] = useState(false);
 
+  //Like function:
   const handleToggledLiked = async () => {
     try {
       setToggledLiked((toggleLiked) => !toggleLiked);

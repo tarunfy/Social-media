@@ -14,6 +14,7 @@ import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 
 const Profie = () => {
   const { user, setUser } = useContext(AuthContext);
+
   const [email, setEmail] = useState("");
   const [fullName, setFullName] = useState("");
   const [contactNumber, setContactNumber] = useState("");
@@ -21,6 +22,7 @@ const Profie = () => {
   const [docId, setDocId] = useState("");
   const [userData, setUserData] = useState(null);
 
+  //get user's current location for google maps:
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((res) => {
       let lat = res.coords.latitude;
@@ -42,6 +44,7 @@ const Profie = () => {
     });
   }, []);
 
+  //get user's creds from firebase:
   useEffect(async () => {
     try {
       const collectionRef = collection(db, "users");
@@ -54,8 +57,10 @@ const Profie = () => {
     }
   }, [profileImg]);
 
+  //updating user's profile
   const handleSubmit = (e) => {
     e.preventDefault();
+
     let file = e.target[3].files[0];
     if (!file) return;
     const storageRef = ref(storage, `profile/${user.userId}/${file.name}`);
@@ -82,6 +87,7 @@ const Profie = () => {
       }
     );
   };
+
   return (
     <div className="profile-container">
       <h1>Edit your profile</h1>
